@@ -1,0 +1,58 @@
+POSITION: Full-Stack Software Developer Co-op (4-Month Term)
+COMPANY: NovaBridge Technologies Inc.
+LOCATION: Toronto, ON (Hybrid — 3 days in-office)
+TERM: September 2026 – December 2026
+COMPENSATION: $22–$26/hr CAD depending on experience
+DEADLINE: Rolling applications — early submission strongly advised
+
+---
+
+ABOUT US
+NovaBridge is a Series A fintech startup building B2B financial infrastructure
+for credit unions and community banks. Our stack is modern, our team is small,
+and we move fast. You will ship code that real users touch on day one.
+
+---
+
+WHAT YOU WILL DO
+- Build and maintain RESTful APIs using Node.js / Express and Python / FastAPI
+- Contribute to our React + TypeScript frontend dashboard (internal tools)
+- Write and debug SQL queries (PostgreSQL) and NoSQL document queries (MongoDB)
+- Integrate third-party financial APIs (Plaid, Stripe, Flinks)
+- Participate in sprint planning, code reviews, and bi-weekly demos
+- Write unit and integration tests (Jest, Pytest)
+
+---
+
+WHAT WE ARE LOOKING FOR
+Required:
+  - Enrolled in a Computer Science, Software Engineering, or related program
+  - Solid fundamentals: data structures, algorithms, REST APIs
+  - Experience in at least one backend language (Node.js, Python, Go)
+  - Familiarity with Git and collaborative branching workflows
+  - Strong written communication — our team is async-first
+
+Nice to Have:
+  - Exposure to cloud platforms (AWS, GCP, or Azure)
+  - Any experience with fintech, payments, or financial data APIs
+  - Personal projects, open-source contributions, or hackathon work
+  - Familiarity with Docker or containerized dev environments
+
+---
+
+MINIMUM ACADEMIC STANDING
+Applicants must be in good academic standing. A cumulative GPA equivalent of
+80%+ (Ontario grading scale) is preferred for this role. Applicants with
+strong project portfolios may be considered at 75%+.
+
+---
+
+HOW TO APPLY
+Submit via the company careers portal:
+  - Resume (PDF)
+  - Unofficial transcript
+  - Link to GitHub or portfolio (required)
+  - Cover letter (optional but reviewed)
+
+NovaBridge Technologies is an equal opportunity employer. We welcome candidates
+of all backgrounds. Accommodations are available upon request.
