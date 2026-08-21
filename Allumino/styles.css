@@ -1,0 +1,390 @@
+/* Allumino — sun-gradient brand, luminous + optimistic */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+:root {
+  /* surface */
+  --bg:        #FBF8EF;
+  --bg-soft:   #F5F1E2;
+  --bg-warm:   #FEF6DC;
+  --bg-blur:   rgba(251,248,239,0.92);
+  --bg-tint:   rgba(245,242,234,0.55);
+  --card:      #FFFFFF;
+  --hairline:  rgba(26,26,26,0.08);
+  --hairline-strong: rgba(26,26,26,0.14);
+
+  /* ink */
+  --ink:       #1A1A1A;
+  --ink-2:     #3D3D3A;
+  --ink-3:     #6B6B65;
+  --ink-4:     #9C9C92;
+
+  /* sun palette — from the logo */
+  --sun-yellow:#FFC107;
+  --sun-gold:  #FFA000;
+  --sun-orange:#F08A00;
+  --sun-deep:  #C66800;
+  --sun-bg:    #FFF2C8;
+  --sun-soft:  #FFE48A;
+
+  /* legacy aliases retargeted */
+  --terra:     #F08A00;   /* was terracotta — now sun-orange */
+  --terra-2:   #FFB800;
+  --terra-bg:  #FFE9B8;
+
+  /* trust + verify */
+  --teal:      #1F4A4A;
+  --teal-2:    #2F6B6B;
+  --teal-bg:   #E4ECEB;
+  --green:     #1F7A4A;
+  --green-bg:  #DDEFE0;
+  --amber:     #B98A1F;
+  --red:       #B33A2E;
+
+  /* sun gradient — for hero surfaces */
+  --sun-grad:  linear-gradient(135deg, #FFD200 0%, #FF9500 100%);
+  --sun-grad-soft: linear-gradient(135deg, #FFF4C2 0%, #FFD89A 100%);
+
+  /* fonts */
+  --display-stack: 'Sora', system-ui, -apple-system, sans-serif;
+  --serif-stack:   'Sora', system-ui, -apple-system, sans-serif;
+  --body-stack:    'Geist', system-ui, -apple-system, sans-serif;
+  --editorial-stack: 'Fraunces', Georgia, serif;
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+
+  --shadow-card: 0 1px 2px rgba(26,26,26,0.04), 0 4px 16px rgba(26,26,26,0.04);
+  --shadow-lift: 0 1px 3px rgba(26,26,26,0.05), 0 10px 30px rgba(26,26,26,0.08);
+  --shadow-sun:  0 8px 28px rgba(240,138,0,0.28), 0 2px 6px rgba(240,138,0,0.18);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: #F2EFE4;
+  color: var(--ink);
+  font-family: var(--body-stack);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Stage */
+.stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 24px;
+  background:
+    radial-gradient(900px 500px at 50% -10%, rgba(255,194,7,0.18) 0%, transparent 65%),
+    radial-gradient(700px 500px at 90% 110%, rgba(240,138,0,0.10) 0%, transparent 60%),
+    #F2EFE4;
+  transition: padding .4s ease;
+}
+.stage[data-view="desktop"] {
+  padding: 28px 20px;
+  align-items: flex-start;
+}
+
+.stage-inner {
+  display: flex; align-items: center; gap: 60px;
+  flex-wrap: wrap; justify-content: center;
+  transition: gap .4s ease;
+}
+
+.device-stage {
+  transition: opacity .35s ease, transform .35s ease;
+}
+.device-stage.switching {
+  opacity: 0.4;
+  transform: scale(0.985);
+}
+
+.brand-rail {
+  max-width: 360px;
+}
+.brand-rail .mark {
+  font-family: var(--display-stack);
+  font-weight: 600; font-size: 52px; line-height: 0.95;
+  letter-spacing: -0.035em; color: var(--ink);
+  margin: 0 0 18px;
+  display: flex; align-items: center; gap: 14px;
+}
+.brand-rail .mark .word {
+  background: var(--sun-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.brand-rail .tag {
+  font-family: var(--editorial-stack);
+  font-size: 21px; line-height: 1.35; color: var(--ink-2);
+  font-weight: 400; letter-spacing: -0.005em;
+  margin: 0 0 28px;
+}
+.brand-rail .meta {
+  font-size: 13px; color: var(--ink-3); line-height: 1.6;
+}
+.brand-rail .meta .k { color: var(--ink-4); margin-right: 6px; }
+.brand-rail .nav-hint {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-top: 16px;
+}
+.brand-rail .nav-hint button {
+  font: 12px/1 var(--body-stack);
+  padding: 6px 10px; border-radius: 999px;
+  background: rgba(26,26,26,0.05);
+  color: var(--ink-2);
+  border: 1px solid var(--hairline);
+  cursor: pointer; transition: all .15s;
+}
+.brand-rail .nav-hint button:hover {
+  background: var(--ink); color: white; border-color: var(--ink);
+}
+.brand-rail .nav-hint button.active {
+  background: var(--sun-grad); color: white; border-color: transparent;
+  box-shadow: var(--shadow-sun);
+}
+
+/* Inside-app shared */
+.app-surface {
+  background: var(--bg);
+  min-height: 100%;
+  font-family: var(--body-stack);
+  color: var(--ink);
+  display: flex; flex-direction: column;
+}
+
+.serif    { font-family: var(--serif-stack); letter-spacing: -0.02em; }
+.display  { font-family: var(--display-stack); letter-spacing: -0.025em; }
+.editorial{ font-family: var(--editorial-stack); letter-spacing: -0.01em; }
+.mono     { font-family: 'Geist Mono', ui-monospace, monospace; }
+
+/* Top header shared by inside-app screens */
+.a-header {
+  padding: 56px 20px 8px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+.a-header .greeting {
+  font-family: var(--body-stack);
+  font-size: 12px; color: var(--ink-3); letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 4px; font-weight: 500;
+}
+.a-header .title {
+  font-family: var(--display-stack);
+  font-size: 28px; font-weight: 600; letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.a-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--sun-grad);
+  color: white; font-weight: 600; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-card);
+  font-family: var(--display-stack);
+  letter-spacing: -0.01em;
+}
+
+/* Bottom nav */
+.a-nav {
+  flex-shrink: 0;
+  display: flex; justify-content: space-around;
+  padding: 8px 8px 24px;
+  background: rgba(251,248,239,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--hairline);
+}
+.a-nav button {
+  flex: 1; background: transparent; border: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 8px 4px;
+  font: 10px/1 var(--body-stack); color: var(--ink-4);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+.a-nav button.on { color: var(--sun-deep); }
+.a-nav button svg { display: block; }
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--hairline);
+}
+
+/* Sun hero — replaces the dark-ink hero pattern */
+.sun-hero {
+  background: var(--sun-grad);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.sun-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(450px 220px at 90% 110%, rgba(255,255,255,0.35), transparent 60%),
+    radial-gradient(300px 200px at 0% 0%, rgba(255,255,255,0.18), transparent 60%);
+  pointer-events: none;
+}
+
+/* Tiny dot */
+.pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 0 0 rgba(255,255,255,0.7);
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+  70%  { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+.verified-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; color: var(--green);
+  background: var(--green-bg);
+  padding: 3px 8px; border-radius: 999px;
+  font-weight: 500; letter-spacing: 0.01em;
+}
+
+button { font-family: inherit; }
+
+.scroll-y {
+  flex: 1; overflow-y: auto;
+  scrollbar-width: thin;
+}
+.scroll-y::-webkit-scrollbar { width: 0; }
+
+/* enter animation */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: slideUp .35s ease-out; }
+
+@keyframes shimmer {
+  0% { background-position: -300px 0; }
+  100% { background-position: 300px 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,194,7,0.4) 50%, transparent 100%);
+  background-size: 300px 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+
+/* ─── DARK MODE — Midnight blue + purple ─────────────────────── */
+
+[data-theme="dark"] {
+  /* surface */
+  --bg:        #0E0F22;
+  --bg-soft:   #181934;
+  --bg-warm:   #1F1F40;
+  --bg-blur:   rgba(14,15,34,0.78);
+  --bg-tint:   rgba(24,25,52,0.55);
+  --card:      #1A1B38;
+  --hairline:  rgba(255,255,255,0.07);
+  --hairline-strong: rgba(255,255,255,0.16);
+
+  /* ink — light text on dark */
+  --ink:       #F5F3FF;
+  --ink-2:     #D1CCEC;
+  --ink-3:     #9B95C2;
+  --ink-4:     #6A6494;
+
+  /* warm sun — kept (for warning semantics) but slightly brighter so it pops on dark */
+  --sun-yellow:#FFD54F;
+  --sun-gold:  #FFC960;
+  --sun-orange:#FFAC4D;
+  --sun-deep:  #FFC080;
+  --sun-bg:    rgba(255, 172, 77, 0.16);
+  --sun-soft:  rgba(255, 172, 77, 0.30);
+
+  /* legacy --terra retargets to purple for primary actions in dark */
+  --terra:     #A78BFA;
+  --terra-2:   #C4B5FD;
+  --terra-bg:  rgba(167,139,250,0.18);
+
+  /* trust accents */
+  --teal:      #5EEAD4;
+  --teal-2:    #67E8F9;
+  --teal-bg:   rgba(94, 234, 212, 0.13);
+  --green:     #4ADE80;
+  --green-bg:  rgba(74, 222, 128, 0.13);
+  --amber:     #FBBF24;
+  --red:       #F87171;
+
+  /* hero gradient — purple → indigo → midnight (the new signature) */
+  --sun-grad:  linear-gradient(135deg, #B794F4 0%, #7C3AED 35%, #4338CA 75%, #312E81 100%);
+  --sun-grad-soft: linear-gradient(135deg, rgba(167,139,250,0.20) 0%, rgba(67,56,202,0.20) 100%);
+
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.45), 0 4px 16px rgba(0,0,0,0.30);
+  --shadow-lift: 0 1px 3px rgba(0,0,0,0.55), 0 14px 36px rgba(0,0,0,0.45);
+  --shadow-sun:  0 8px 32px rgba(124,58,237,0.55), 0 2px 8px rgba(167,139,250,0.35);
+}
+
+html[data-theme="dark"], body[data-theme="dark"] {
+  background: #08081A;
+  color: var(--ink);
+}
+
+[data-theme="dark"] .stage {
+  background:
+    radial-gradient(900px 500px at 50% -10%, rgba(167,139,250,0.22) 0%, transparent 65%),
+    radial-gradient(700px 500px at 90% 110%, rgba(67,56,202,0.20) 0%, transparent 60%),
+    radial-gradient(500px 400px at 5% 90%, rgba(124,58,237,0.14) 0%, transparent 60%),
+    #08081A;
+}
+
+[data-theme="dark"] .a-nav {
+  background: rgba(14,15,34,0.85);
+  border-top: 1px solid var(--hairline);
+}
+[data-theme="dark"] .a-nav button.on { color: #C4B5FD; }
+
+[data-theme="dark"] .a-avatar {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .pulse-dot {
+  background: white;
+  box-shadow: 0 0 0 0 rgba(255,255,255,0.7);
+}
+
+/* Brand rail in dark — wordmark stays gradient (now purple) */
+[data-theme="dark"] .brand-rail .mark { color: var(--ink); }
+[data-theme="dark"] .brand-rail .tag  { color: var(--ink-2); }
+[data-theme="dark"] .brand-rail .nav-hint button {
+  background: rgba(255,255,255,0.06);
+  color: var(--ink-2);
+  border: 1px solid var(--hairline);
+}
+[data-theme="dark"] .brand-rail .nav-hint button:hover {
+  background: var(--ink); color: #1A1B38; border-color: var(--ink);
+}
+[data-theme="dark"] .brand-rail .nav-hint button.active {
+  background: var(--sun-grad); color: white; border-color: transparent;
+  box-shadow: var(--shadow-sun);
+}
+
+/* Shimmer keyframe — make it purple in dark */
+[data-theme="dark"] .shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(167,139,250,0.35) 50%, transparent 100%);
+  background-size: 300px 100%;
+}
+
+/* macOS titlebar — go midnight in dark */
+[data-theme="dark"] .mac-titlebar {
+  background: linear-gradient(to bottom, #1E1B3F, #181534) !important;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08) !important;
+}
+[data-theme="dark"] .mac-titlebar .mac-title {
+  color: rgba(255,255,255,0.7) !important;
+}
